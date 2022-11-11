@@ -4,22 +4,38 @@
   import AppCard from "./components/AppCard.vue";
   import CharactersList from "./components/CharactersList.vue";
   
+  
   export default {
     components:{ 
       AppCard,
       CharactersList,
     
+    
     },
     data(){
       return{
-        store
+        store,
+        serie:"",
       }
     },
+
+    methods: {
+      toSelectSerie(event){
+        // console.log("serie scelta");
+        this.serie = event.target.value;
+
+        axios.get(`https://www.breakingbadapi.com/api/characters?category=${this.serie}`).then((resp => {
+           this.store.characters= resp.data;
+           console.log(this.store.characters)
+        }))
+      }
+    },
+
     created() {
       axios.get("https://www.breakingbadapi.com/api/characters").then((resp => {
         this.store.characters = resp.data;
         // console.log(this.store.characters)
-            }))
+      }))
 
     }
   }
@@ -27,26 +43,35 @@
 
 <template>
   <div class="flex-container ms_container">
+    
     <header class=" ms_header">
       <h1 class="text-light">Breaking Bad Api</h1>
-      
     </header>  
 
     <main>
-      <div class="top_menu">
-        <select class="form-select m-3 mx-auto" name="" id="serie-choise"></select>
-        <option value="serie-choise">Select category</option>
-      </div>
-      <div class="container container-flex">
+      <section>
+        <div class="top_menu">
+          
+          <select @change="toSelectSerie($event)" class="form-select m-3 mx-auto" name="" >
+            <option value="Select-serie">Select serie</option>
+            <option value="Breaking+Bad">Breaking bad</option>
+            <option value="Better+Call+Saul">Better call Saul</option>
+          </select>
+  
+        </div>
+      </section>
+      
+      <section class="ms_small-container container-flex">
+        
         <div class="search_result">
           <h4>Found 62 characters</h4>
         </div>
+
         <div class="container-flex margin_auto text-center">
           <CharactersList />
-          <!-- <AppCard /> -->
         </div>
 
-      </div>
+      </section>
     </main>
     
   </div>
@@ -68,15 +93,14 @@
     padding-left: 6rem;
   }
 
-  .top_menu{
-    padding-left: 11rem;
-  }
-
   main{
     width: 100%;
-    
-  
-    .container{
+    .top_menu{
+      padding: 2rem;
+      width: 20rem;
+      margin-left: 10rem;   
+    }
+    .ms_small-container{
       width: 80%;
       background-color: white;
       margin: 0 auto;
@@ -84,6 +108,8 @@
 
       .search_result{
         background-color: rgba(33, 37, 41, 1);
+        width: 97%;
+        margin: 0 auto;
         h4{
           color: white;
           padding: 1rem;
