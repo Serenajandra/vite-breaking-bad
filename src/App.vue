@@ -34,13 +34,14 @@
 
     <main>
       <div class="top_menu">
-        <p class="text-light">Select category</p>
+        <select class="form-select m-3 mx-auto" name="" id="serie-choise"></select>
+        <option value="serie-choise">Select category</option>
       </div>
-      <div class="container bg-light">
+      <div class="container container-flex">
         <div class="search_result">
           <h4>Found 62 characters</h4>
         </div>
-        <div class="container">
+        <div class="container-flex margin_auto text-center">
           <CharactersList />
           <!-- <AppCard /> -->
         </div>
@@ -76,8 +77,8 @@
     
   
     .container{
-      width: 70%;
-
+      width: 80%;
+      background-color: white;
       margin: 0 auto;
       padding-top: 3rem;
 
@@ -86,7 +87,7 @@
         h4{
           color: white;
           padding: 1rem;
-         }
+        }
         
       }
     }  

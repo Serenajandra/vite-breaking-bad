@@ -18,7 +18,7 @@ export default{
 </script>
 
 <template>
-    <div class="row row-cols-5 gap-2">
+    <div class="row row-cols-6 gap-1">
         <div class="col" v-for="character in store.characters" :key="character.char_id">
             <AppCard  :character="character" />
         </div>
@@ -26,4 +26,7 @@ export default{
 </template>
 
 <style lang="scss" scoped>
+.row{
+    justify-content: space-around;
+}
 </style>

@@ -10,12 +10,13 @@ export default {
 
 <template>
  
-        <div class="card">
+        <div class="ms_card">
             <div class="card_container">
                 <img :src="character.img" alt="">
             </div>
-                <h4>{{character.name}}</h4>
-            <p>Role</p>
+            <p class="mt-1">{{character.name}}</p>
+            <p class="fst-italic fw-lighter">{{character.status}}</p>
+           
         </div>
 
 
@@ -23,9 +24,11 @@ export default {
 
 <style lang="scss" scoped>
 @use "../styles/partials/variabiles";
-.card{
+.ms_card{
     background-color:  rgba(33, 37, 41, 1);
     color: white;
+    padding: 1rem;
+    height: 21rem;
 
     .card_container{
         img{
