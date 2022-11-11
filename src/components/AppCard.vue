@@ -31,6 +31,9 @@ export default {
     height: 21rem;
 
     .card_container{
+        width: 90%;
+        height: 70%;
+        margin: 0 auto;
         img{
             object-fit: contain;
         }
