@@ -42,7 +42,7 @@
         </div>
         <div class="container">
           <CharactersList />
-          <AppCard />
+          <!-- <AppCard /> -->
         </div>
 
       </div>
@@ -77,7 +77,7 @@
   
     .container{
       width: 70%;
-      height: 70vh;
+
       margin: 0 auto;
       padding-top: 3rem;
 

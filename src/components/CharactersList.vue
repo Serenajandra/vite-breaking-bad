@@ -1,11 +1,14 @@
 <script>
 import {store} from "../store";
 import AppCard from "./AppCard.vue";
+
 export default{
     name: "CharactersList",
+
     components:{ 
         AppCard
     },
+    
     data(){
         return{
             store

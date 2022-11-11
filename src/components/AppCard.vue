@@ -1,18 +1,20 @@
 <script>
 export default {
     name: "AppCard",
+
     props: {
         character: Object
     }
 }
 </script>
+
 <template>
  
         <div class="card">
             <div class="card_container">
-                <!-- <img :src="character.img" alt=""> -->
+                <img :src="character.img" alt="">
             </div>
-                <!-- <h4>{{character.name}}</h4> -->
+                <h4>{{character.name}}</h4>
             <p>Role</p>
         </div>
 
