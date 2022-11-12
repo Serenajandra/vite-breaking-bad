@@ -26,7 +26,8 @@
 
         axios.get(`https://www.breakingbadapi.com/api/characters?category=${this.serie}`).then((resp => {
            this.store.characters= resp.data;
-           console.log(this.store.characters)
+           
+          //  console.log(this.store.characters)
         }))
       }
     },
@@ -62,15 +63,9 @@
       </section>
       
       <section class="ms_small-container container-flex">
-        
-        <div class="search_result">
-          <h4>Found 62 characters</h4>
-        </div>
-
         <div class="container-flex margin_auto text-center">
           <CharactersList />
         </div>
-
       </section>
     </main>
     

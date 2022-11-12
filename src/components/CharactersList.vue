@@ -18,6 +18,9 @@ export default{
 </script>
 
 <template>
+    <div class="search_result">
+        <h4>Found {{store.characters.length}} characters</h4>
+    </div>
     <div class="row row-cols-6 gap-1">
         <div class="col" v-for="character in store.characters" :key="character.char_id">
             <AppCard  :character="character" />
