@@ -21,11 +21,11 @@
 
     methods: {
       toSelectSerie(event){
-        // console.log("serie scelta");
         this.serie = event.target.value;
+        console.log(event.target.value)
 
         axios.get(`https://www.breakingbadapi.com/api/characters?category=${this.serie}`).then((resp => {
-           this.store.characters= resp.data;
+           this.store.characters = resp.data;
            
           //  console.log(this.store.characters)
         }))
@@ -55,7 +55,7 @@
         <div class="top_menu">
           
           <select @change="toSelectSerie($event)" class="form-select m-3 mx-auto" name="" >
-            <option value="Select-serie">Select serie</option>
+            <option value="">Select serie</option>
             <option value="Breaking+Bad">Breaking bad</option>
             <option value="Better+Call+Saul">Better call Saul</option>
           </select>
