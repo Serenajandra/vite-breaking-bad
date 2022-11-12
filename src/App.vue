@@ -46,6 +46,7 @@
   <div class="flex-container ms_container">
     
     <header class=" ms_header">
+      <img src="./assets/img/logo (1).png" alt="">
       <h1 class="text-light">Breaking Bad Api</h1>
     </header>  
 
@@ -85,7 +86,14 @@
   .ms_header{
     width: 100%;
     height: 60px;
-    padding-left: 6rem;
+    padding-left: 2rem;
+    padding-top: 1rem;
+    display: flex;
+
+    img{
+      width: 4rem;
+      margin-right: 2rem;
+    }
   }
 
   main{
