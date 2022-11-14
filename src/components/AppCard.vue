@@ -10,14 +10,14 @@ export default {
 
 <template>
  
-        <div class="ms_card">
-            <div class="card_container">
-                <img :src="character.img" alt="">
-            </div>
-            <p class="mt-1">{{character.name}}</p>
-            <p class="fst-italic fw-lighter">{{character.status}}</p>
-           
+    <div class="ms_card">
+        <div class="card_container">
+            <img :src="character.img" alt="">
         </div>
+        <p class="mt-1">{{character.name}}</p>
+        <p class="fst-italic fw-lighter">{{character.status}}</p>
+       
+    </div>
 
 
 </template>

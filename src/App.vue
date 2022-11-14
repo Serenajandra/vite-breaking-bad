@@ -22,13 +22,15 @@
     methods: {
       toSelectSerie(event){
         this.serie = event.target.value;
-        console.log(event.target.value)
+        // console.log(event.target.value)
 
         axios.get(`https://www.breakingbadapi.com/api/characters?category=${this.serie}`).then((resp => {
            this.store.characters = resp.data;
            
           //  console.log(this.store.characters)
-        }))
+        })).catch(error=>{
+          this.store.characters = resp.data;
+        })
       }
     },
 
